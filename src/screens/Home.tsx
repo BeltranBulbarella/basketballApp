@@ -3,10 +3,12 @@ import {StyleSheet, Text} from 'react-native';
 import {useMatches} from '../utils/data';
 import SingleMatchResult from '../modules/match/singleMatchResult/SingleMatchResult';
 import type {Match} from '../utils/interfaces';
+import BottomBar from '../modules/bottomBar/BottomBar';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
   const matches = useMatches();
-
+  const navigation = useNavigation();
   return (
     <>
       <Text style={styles.title}>Last Matches</Text>
@@ -35,6 +37,7 @@ const Home = () => {
             />
           );
         })}
+      <BottomBar navigation={navigation} />
     </>
   );
 };
@@ -49,6 +52,10 @@ const Home = () => {
 // }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#192428',
+    flex: 1,
+  },
   title: {
     width: 211,
     height: 39,
@@ -56,7 +63,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
     lineHeight: 39,
     padding: 5,
-    marginTop: 40,
   },
 });
 
