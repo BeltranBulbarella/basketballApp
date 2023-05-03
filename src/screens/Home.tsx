@@ -3,6 +3,7 @@ import {StyleSheet, Text} from 'react-native';
 import {useMatches} from '../utils/data';
 import SingleMatchResult from '../modules/match/singleMatchResult/SingleMatchResult';
 import type {Match} from '../utils/types';
+import {BottomBarCurrent} from '../utils/types';
 import BottomBar from '../modules/bottomBar/BottomBar';
 import {useNavigation} from '@react-navigation/native';
 
@@ -37,7 +38,10 @@ const Home = () => {
             />
           );
         })}
-      <BottomBar navigation={navigation} />
+      <BottomBar
+        navigation={navigation}
+        current={BottomBarCurrent.LastMatches}
+      />
     </>
   );
 };

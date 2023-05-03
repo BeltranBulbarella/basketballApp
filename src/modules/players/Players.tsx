@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import type {PlayerStat} from '../../utils/types';
+import {BottomBarCurrent} from '../../utils/types';
+import BottomBar from '../bottomBar/BottomBar';
 
 const mockData: PlayerStat[] = [
   {
@@ -23,29 +25,32 @@ const mockData: PlayerStat[] = [
 
 const Players = ({navigation}: {navigation: any}) => {
   return (
-    <View>
-      <Text style={styles.title}>Players</Text>
-      <View style={styles.container}>
-        <Text style={styles.subtitleNumber}>#</Text>
-        <Text style={styles.subtitleTeam}>Name</Text>
-        <Text style={styles.subtitleTeam}>Team</Text>
-        <Text style={styles.subtitle}>P</Text>
-        <Text style={styles.subtitle}>PPM</Text>
-        <Text style={styles.subtitle}>MVP</Text>
+    <>
+      <View>
+        <Text style={styles.title}>Players</Text>
+        <View style={styles.container}>
+          <Text style={styles.subtitleNumber}>#</Text>
+          <Text style={styles.subtitleTeam}>Name</Text>
+          <Text style={styles.subtitleTeam}>Team</Text>
+          <Text style={styles.subtitle}>P</Text>
+          <Text style={styles.subtitle}>PPM</Text>
+          <Text style={styles.subtitle}>MVP</Text>
+        </View>
+        {mockData.map((data, index) => {
+          return (
+            <View style={[styles.container, {marginTop: 10}]} key={index}>
+              <Text style={styles.mapSubtitleNumber}>{data.id}</Text>
+              <Text style={styles.mapSubtitleTeam}>{data.name}</Text>
+              <Text style={styles.mapSubtitleTeam}>{data.team}</Text>
+              <Text style={styles.mapSubtitle}>{data.points}</Text>
+              <Text style={styles.mapSubtitle}>{data.ppm}</Text>
+              <Text style={styles.mapSubtitle}>{data.mvp}</Text>
+            </View>
+          );
+        })}
       </View>
-      {mockData.map((data, index) => {
-        return (
-          <View style={[styles.container, {marginTop: 10}]} key={index}>
-            <Text style={styles.mapSubtitleNumber}>{data.id}</Text>
-            <Text style={styles.mapSubtitleTeam}>{data.name}</Text>
-            <Text style={styles.mapSubtitleTeam}>{data.team}</Text>
-            <Text style={styles.mapSubtitle}>{data.points}</Text>
-            <Text style={styles.mapSubtitle}>{data.ppm}</Text>
-            <Text style={styles.mapSubtitle}>{data.mvp}</Text>
-          </View>
-        );
-      })}
-    </View>
+      <BottomBar navigation={navigation} current={BottomBarCurrent.Players} />
+    </>
   );
 };
 

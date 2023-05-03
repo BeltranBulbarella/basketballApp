@@ -52,3 +52,9 @@ export interface PlayerStat {
   ppm: number;
   mvp: number;
 }
+
+export enum BottomBarCurrent {
+  'LastMatches',
+  'Standings',
+  'Players',
+}

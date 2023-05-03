@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import type {StandingStat} from '../../utils/types';
+import BottomBar from '../bottomBar/BottomBar';
+import {BottomBarCurrent} from '../../utils/types';
 
 const mockData: StandingStat[] = [
   {
@@ -25,31 +27,34 @@ const mockData: StandingStat[] = [
 
 const Standings = ({navigation}: {navigation: any}) => {
   return (
-    <View>
-      <Text style={styles.title}>Standings</Text>
-      <View style={styles.container}>
-        <Text style={styles.subtitleNumber}>#</Text>
-        <Text style={styles.subtitleTeam}>Team</Text>
-        <Text style={styles.subtitle}>W</Text>
-        <Text style={styles.subtitle}>L</Text>
-        <Text style={styles.subtitle}>%</Text>
-        <Text style={styles.subtitle}>PF</Text>
-        <Text style={styles.subtitle}>PC</Text>
+    <>
+      <View>
+        <Text style={styles.title}>Standings</Text>
+        <View style={styles.container}>
+          <Text style={styles.subtitleNumber}>#</Text>
+          <Text style={styles.subtitleTeam}>Team</Text>
+          <Text style={styles.subtitle}>W</Text>
+          <Text style={styles.subtitle}>L</Text>
+          <Text style={styles.subtitle}>%</Text>
+          <Text style={styles.subtitle}>PF</Text>
+          <Text style={styles.subtitle}>PC</Text>
+        </View>
+        {mockData.map((data, index) => {
+          return (
+            <View style={[styles.container, {marginTop: 10}]} key={index}>
+              <Text style={styles.mapSubtitleNumber}>{data.id}</Text>
+              <Text style={styles.mapSubtitleTeam}>{data.team}</Text>
+              <Text style={styles.mapSubtitle}>{data.wins}</Text>
+              <Text style={styles.mapSubtitle}>{data.losses}</Text>
+              <Text style={styles.mapSubtitle}>{data.percentage}</Text>
+              <Text style={styles.mapSubtitle}>{data.pointsFor}</Text>
+              <Text style={styles.mapSubtitle}>{data.pointsAgainst}</Text>
+            </View>
+          );
+        })}
       </View>
-      {mockData.map((data, index) => {
-        return (
-          <View style={[styles.container, {marginTop: 10}]} key={index}>
-            <Text style={styles.mapSubtitleNumber}>{data.id}</Text>
-            <Text style={styles.mapSubtitleTeam}>{data.team}</Text>
-            <Text style={styles.mapSubtitle}>{data.wins}</Text>
-            <Text style={styles.mapSubtitle}>{data.losses}</Text>
-            <Text style={styles.mapSubtitle}>{data.percentage}</Text>
-            <Text style={styles.mapSubtitle}>{data.pointsFor}</Text>
-            <Text style={styles.mapSubtitle}>{data.pointsAgainst}</Text>
-          </View>
-        );
-      })}
-    </View>
+      <BottomBar navigation={navigation} current={BottomBarCurrent.Standings} />
+    </>
   );
 };
 
