@@ -33,3 +33,22 @@ export interface Match {
   mvp: Player;
   mvpId: string;
 }
+
+export interface StandingStat {
+  id: number;
+  team: string;
+  wins: number;
+  losses: number;
+  percentage: number;
+  pointsFor: number;
+  pointsAgainst: number;
+}
+
+export interface PlayerStat {
+  id: number;
+  name: string;
+  team: string;
+  points: number;
+  ppm: number;
+  mvp: number;
+}

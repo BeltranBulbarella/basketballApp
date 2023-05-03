@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import type {Team} from '../../../utils/interfaces';
+import type {Team} from '../../../utils/types';
 import TeamButton from './teamButton/TeamButton';
 
 interface CustomButtonProps {

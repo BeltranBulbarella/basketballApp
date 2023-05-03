@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {useMatches} from '../utils/data';
 import SingleMatchResult from '../modules/match/singleMatchResult/SingleMatchResult';
-import type {Match} from '../utils/interfaces';
+import type {Match} from '../utils/types';
 import BottomBar from '../modules/bottomBar/BottomBar';
 import {useNavigation} from '@react-navigation/native';
 

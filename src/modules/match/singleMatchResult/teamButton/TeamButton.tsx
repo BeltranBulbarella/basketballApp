@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
-import type {Team} from '../../../../utils/interfaces';
+import type {Team} from '../../../../utils/types';
 import {SvgUri} from 'react-native-svg';
 
 interface CustomButtonProps extends Team {

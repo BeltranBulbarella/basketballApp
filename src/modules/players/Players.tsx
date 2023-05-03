@@ -1,9 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import type {PlayerStat} from '../../utils/types';
 
-const mockData = [
+const mockData: PlayerStat[] = [
   {
     id: 1,
+    name: 'Player 1',
     team: 'Team 1',
     points: 10,
     ppm: 10,
@@ -11,6 +13,7 @@ const mockData = [
   },
   {
     id: 2,
+    name: 'Player 2',
     team: 'Team 2',
     points: 10,
     ppm: 10,
@@ -24,6 +27,7 @@ const Players = ({navigation}: {navigation: any}) => {
       <Text style={styles.title}>Players</Text>
       <View style={styles.container}>
         <Text style={styles.subtitleNumber}>#</Text>
+        <Text style={styles.subtitleTeam}>Name</Text>
         <Text style={styles.subtitleTeam}>Team</Text>
         <Text style={styles.subtitle}>P</Text>
         <Text style={styles.subtitle}>PPM</Text>
@@ -33,6 +37,7 @@ const Players = ({navigation}: {navigation: any}) => {
         return (
           <View style={[styles.container, {marginTop: 10}]} key={index}>
             <Text style={styles.mapSubtitleNumber}>{data.id}</Text>
+            <Text style={styles.mapSubtitleTeam}>{data.name}</Text>
             <Text style={styles.mapSubtitleTeam}>{data.team}</Text>
             <Text style={styles.mapSubtitle}>{data.points}</Text>
             <Text style={styles.mapSubtitle}>{data.ppm}</Text>
