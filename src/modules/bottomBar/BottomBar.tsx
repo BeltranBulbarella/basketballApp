@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   buttons: {
-    width: '30',
-    height: '30',
+    width: '40',
+    height: '40',
   },
 });
 
