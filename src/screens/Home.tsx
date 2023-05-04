@@ -45,15 +45,6 @@ const Home = () => {
     </>
   );
 };
-// onClick={() =>
-//   navigation.navigate('Match', {
-//     team1: result.team1,
-//     team2: result.team2,
-//     score: result.score,
-//     team1Players: result.team1Players,
-//     team2Players: result.team2Players,
-//   })
-// }
 
 const styles = StyleSheet.create({
   container: {
@@ -71,3 +62,12 @@ const styles = StyleSheet.create({
 });
 
 export default Home;
+// onClick={() =>
+//   navigation.navigate('Match', {
+//     team1: result.team1,
+//     team2: result.team2,
+//     score: result.score,
+//     team1Players: result.team1Players,
+//     team2Players: result.team2Players,
+//   })
+// }

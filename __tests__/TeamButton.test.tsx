@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
-import TeamButton from './TeamButton';
+import TeamButton from '../src/modules/match/singleMatchResult/teamButton/TeamButton';
 
 describe('TeamButton', () => {
   it('renders the team name correctly', () => {

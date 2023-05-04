@@ -9,9 +9,9 @@ const mockData: PlayerStat[] = [
     id: 1,
     name: 'Player 1',
     team: 'Team 1',
-    points: 10,
-    ppm: 10,
-    mvp: 10,
+    points: 20,
+    ppm: 20,
+    mvp: 20,
   },
   {
     id: 2,

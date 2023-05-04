@@ -13,4 +13,7 @@ module.exports = {
     },
   },
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(@react-native|react-native|react-native-feather)/)',
+  ],
 };

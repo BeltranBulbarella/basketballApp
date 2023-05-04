@@ -8,11 +8,11 @@ const mockData: StandingStat[] = [
   {
     id: 1,
     team: 'Team 1',
-    wins: 10,
-    losses: 10,
-    percentage: 10,
-    pointsFor: 10,
-    pointsAgainst: 10,
+    wins: 20,
+    losses: 20,
+    percentage: 20,
+    pointsFor: 20,
+    pointsAgainst: 20,
   },
   {
     id: 2,
