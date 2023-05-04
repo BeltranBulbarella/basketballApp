@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683205554992" clover="3.2.0">
-  <project timestamp="1683205554992" name="All files">
-    <metrics statements="96" coveredstatements="74" conditionals="10" coveredconditionals="10" methods="24" coveredmethods="15" elements="130" coveredelements="99" complexity="0" loc="96" ncloc="96" packages="9" files="10" classes="10"/>
+<coverage generated="1683207551074" clover="3.2.0">
+  <project timestamp="1683207551074" name="All files">
+    <metrics statements="96" coveredstatements="84" conditionals="10" coveredconditionals="10" methods="24" coveredmethods="20" elements="130" coveredelements="114" complexity="0" loc="96" ncloc="96" packages="9" files="10" classes="10"/>
     <package name="modules.bottomBar">
       <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
       <file name="BottomBar.tsx" path="/Users/beltranbulbarella/WebstormProjects/basketballApp/src/modules/bottomBar/BottomBar.tsx">
         <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="55" count="4" type="stmt"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="55" count="5" type="stmt"/>
       </file>
     </package>
     <package name="modules.match">
@@ -40,26 +40,26 @@
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="SingleMatchResult.tsx" path="/Users/beltranbulbarella/WebstormProjects/basketballApp/src/modules/match/singleMatchResult/SingleMatchResult.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
         <line num="13" count="3" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
       </file>
     </package>
     <package name="modules.match.singleMatchResult.teamButton">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="TeamButton.tsx" path="/Users/beltranbulbarella/WebstormProjects/basketballApp/src/modules/match/singleMatchResult/teamButton/TeamButton.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
         <line num="11" count="8" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
       </file>
     </package>
     <package name="modules.players">
@@ -114,45 +114,45 @@
       <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="Home.tsx" path="/Users/beltranbulbarella/WebstormProjects/basketballApp/src/screens/Home.tsx">
         <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
       </file>
     </package>
     <package name="utils">
-      <metrics statements="16" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="1"/>
+      <metrics statements="16" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="6"/>
       <file name="data.tsx" path="/Users/beltranbulbarella/WebstormProjects/basketballApp/src/utils/data.tsx">
-        <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
       </file>
       <file name="types.ts" path="/Users/beltranbulbarella/WebstormProjects/basketballApp/src/utils/types.ts">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="56" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="57" count="4" type="stmt"/>
-        <line num="58" count="4" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
+        <line num="56" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="58" count="5" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
       </file>
     </package>
   </project>
