@@ -15,33 +15,29 @@ export interface MatchResultProps {
   team2Players: Player[];
 }
 
-interface MatchProps {
-  route: RouteProp<ParamListBase, 'Match'> & {params: MatchResultProps};
-}
-
-const Match = (props: MatchProps) => {
-  const {score, team1, team1Players, team2, team2Players} = props.route.params;
+const Match = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.teamContainer}>
-        <Text style={styles.teamName}>{team1}</Text>
-        <Text style={styles.score}>{score}</Text>
-        <Text style={styles.teamName}>{team2}</Text>
-      </View>
-      <View style={styles.pointsContainer}>
-        {team1Players.map((player: Player, index: number) => (
-          <View key={player.name} style={styles.playerContainer}>
-            <Text style={styles.playerName}>{player.name}</Text>
-            <Text style={styles.playerPoints}>{player.points}</Text>
-            <Text style={styles.playerPoints}>
-              {team2Players[index].points}
-            </Text>
-            <Text style={[styles.playerName, {textAlign: 'right'}]}>
-              {team2Players[index].name}
-            </Text>
-          </View>
-        ))}
-      </View>
+      <Text>asas</Text>
+      {/*<View style={styles.teamContainer}>*/}
+      {/*  <Text style={styles.teamName}>{team1}</Text>*/}
+      {/*  <Text style={styles.score}>{score}</Text>*/}
+      {/*  <Text style={styles.teamName}>{team2}</Text>*/}
+      {/*</View>*/}
+      {/*<View style={styles.pointsContainer}>*/}
+      {/*  {team1Players.map((player: Player, index: number) => (*/}
+      {/*    <View key={player.name} style={styles.playerContainer}>*/}
+      {/*      <Text style={styles.playerName}>{player.name}</Text>*/}
+      {/*      <Text style={styles.playerPoints}>{player.points}</Text>*/}
+      {/*      <Text style={styles.playerPoints}>*/}
+      {/*        {team2Players[index].points}*/}
+      {/*      </Text>*/}
+      {/*      <Text style={[styles.playerName, {textAlign: 'right'}]}>*/}
+      {/*        {team2Players[index].name}*/}
+      {/*      </Text>*/}
+      {/*    </View>*/}
+      {/*  ))}*/}
+      {/*</View>*/}
     </View>
   );
 };

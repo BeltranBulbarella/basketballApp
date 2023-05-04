@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/screens/Home';
 import Standings from './src/modules/standings/Standings';
 import Players from './src/modules/players/Players';
+import Match from './src/modules/match/Match';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,7 +12,16 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName='Home'
-        screenOptions={{animationTypeForReplace: 'pop'}}
+        screenOptions={{
+          animationTypeForReplace: 'pop',
+          headerStyle: {
+            backgroundColor: '#333333', // Change the background color of the header
+          },
+          headerTintColor: '#F29D38', // Change the color of the header text
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       >
         <Stack.Screen
           name='Home'
@@ -43,6 +53,15 @@ export default function App() {
         <Stack.Screen
           name='Players'
           component={Players}
+          options={() => ({
+            title: '',
+            animationTypeForReplace: 'push',
+            animation: 'slide_from_right',
+          })}
+        />
+        <Stack.Screen
+          name='Match'
+          component={Match}
           options={() => ({
             title: '',
             animationTypeForReplace: 'push',

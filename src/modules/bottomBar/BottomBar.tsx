@@ -1,5 +1,5 @@
 import {StyleSheet, View} from 'react-native';
-import {BarChart2, Clock, List} from 'react-native-feather';
+import {BarChart2, Clock, Users} from 'react-native-feather';
 import {BottomBarCurrent} from '../../utils/types';
 
 const BottomBar = ({
@@ -23,7 +23,7 @@ const BottomBar = ({
         color={current === BottomBarCurrent.Standings ? '#F29D38' : '#FFFFFF'}
         onPress={() => navigation.navigate('Standings')}
       />
-      <List
+      <Users
         testID='bottombar-list'
         style={styles.buttons}
         color={current === BottomBarCurrent.Players ? '#F29D38' : '#FFFFFF'}

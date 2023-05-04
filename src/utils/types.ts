@@ -36,21 +36,19 @@ export interface Match {
 
 export interface StandingStat {
   id: number;
-  team: string;
+  team_name: string;
   wins: number;
-  losses: number;
-  percentage: number;
-  pointsFor: number;
-  pointsAgainst: number;
+  points_scored: number;
+  matches_played: number;
 }
 
 export interface PlayerStat {
   id: number;
-  name: string;
-  team: string;
-  points: number;
-  ppm: number;
-  mvp: number;
+  player_name: string;
+  team_name: string;
+  points_scored: number;
+  matches_played: number;
+  mvps: number;
 }
 
 export enum BottomBarCurrent {

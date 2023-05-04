@@ -1,21 +1,43 @@
+import Players from '../src/modules/players/Players';
 import React from 'react';
 import {render} from '@testing-library/react-native';
-import Players from '../src/modules/players/Players';
+import {NavigationContainer} from '@react-navigation/native';
+
+jest.mock('../src/utils/data', () => ({
+  useGetPlayersStandings: () => [
+    {
+      player_name: 'John Doe',
+      team_name: 'Team A',
+      points_scored: 10,
+      matches_played: 2,
+      mvps: 1,
+    },
+    {
+      player_name: 'Jane Smith',
+      team_name: 'Team B',
+      points_scored: 20,
+      matches_played: 4,
+      mvps: 2,
+    },
+  ],
+}));
 
 const mockNavigation: any = {
   navigate: jest.fn(),
 };
 
-describe('Players', () => {
-  it('renders the component correctly', () => {
-    const {getByText, getAllByText} = render(
-      <Players navigation={mockNavigation} />,
-    );
-
-    expect(getByText('Players')).toBeTruthy();
-    expect(getByText('Player 1')).toBeTruthy();
-    expect(getByText('Team 1')).toBeTruthy();
-    const elementsWith10 = getAllByText('10');
-    expect(elementsWith10).toHaveLength(3); // If you expect only one element with text '10'
-  });
+test('renders Players component', () => {
+  const {getByText} = render(
+    <NavigationContainer>
+      <Players navigation={mockNavigation} />
+    </NavigationContainer>,
+  );
+  expect(getByText('Players')).toBeTruthy();
+  expect(getByText('Name')).toBeTruthy();
+  expect(getByText('Team')).toBeTruthy();
+  expect(getByText('P')).toBeTruthy();
+  expect(getByText('PPM')).toBeTruthy();
+  expect(getByText('MVP')).toBeTruthy();
+  expect(getByText('John Doe')).toBeTruthy();
+  expect(getByText('Jane Smith')).toBeTruthy();
 });

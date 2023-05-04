@@ -1,18 +1,14 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, View} from 'react-native';
 import type {Team} from '../../../../utils/types';
 import {SvgUri} from 'react-native-svg';
 
-interface CustomButtonProps extends Team {
-  onClick?: () => void;
-}
-
-const TeamButton = (props: CustomButtonProps) => {
+const TeamButton = (props: Team) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={props.onClick}>
+    <View style={styles.button}>
       <SvgUri width='30' height='30' uri={props.imageURL} />
       <Text style={styles.teamName}>{props.name}</Text>
-    </TouchableOpacity>
+    </View>
   );
 };
 

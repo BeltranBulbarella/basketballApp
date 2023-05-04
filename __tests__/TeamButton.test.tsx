@@ -9,20 +9,4 @@ describe('TeamButton', () => {
     );
     expect(getByText('Team A')).toBeDefined();
   });
-
-  it('calls the onClick function when pressed', () => {
-    const handleClick = jest.fn();
-    const {getByText} = render(
-      <TeamButton
-        name='Team A'
-        key='TeamA'
-        players={[]}
-        id='1'
-        imageURL=''
-        onClick={handleClick}
-      />,
-    );
-    fireEvent.press(getByText('Team A'));
-    expect(handleClick).toHaveBeenCalledTimes(1);
-  });
 });

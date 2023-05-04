@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -178,12 +178,8 @@
 <a name='L113'></a><a href='#L113'>113</a>
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a>
-<a name='L120'></a><a href='#L120'>120</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,13 +195,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,7 +208,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,12 +222,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -298,11 +292,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import {Dimensions, StyleSheet, Text, View} from 'react-native';</span>
 import type {ParamListBase, RouteProp} from '@react-navigation/native';
 &nbsp;
 interface Player {
@@ -318,41 +310,37 @@ export interface MatchResultProps {
   team2Players: Player[];
 }
 &nbsp;
-interface MatchProps {
-  route: RouteProp&lt;ParamListBase, 'Match'&gt; &amp; {params: MatchResultProps};
-}
-&nbsp;
-const Match = (props: MatchProps) =&gt; {
-  const {score, team1, team1Players, team2, team2Players} = props.route.params;
-  return (
+const <span class="fstat-no" title="function not covered" >Match </span>= <span class="cstat-no" title="statement not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;View style={styles.container}&gt;
-      &lt;View style={styles.teamContainer}&gt;
-        &lt;Text style={styles.teamName}&gt;{team1}&lt;/Text&gt;
-        &lt;Text style={styles.score}&gt;{score}&lt;/Text&gt;
-        &lt;Text style={styles.teamName}&gt;{team2}&lt;/Text&gt;
-      &lt;/View&gt;
-      &lt;View style={styles.pointsContainer}&gt;
-        {team1Players.map((player: Player, index: number) =&gt; (
-          &lt;View key={player.name} style={styles.playerContainer}&gt;
-            &lt;Text style={styles.playerName}&gt;{player.name}&lt;/Text&gt;
-            &lt;Text style={styles.playerPoints}&gt;{player.points}&lt;/Text&gt;
-            &lt;Text style={styles.playerPoints}&gt;
-              {team2Players[index].points}
-            &lt;/Text&gt;
-            &lt;Text style={[styles.playerName, {textAlign: 'right'}]}&gt;
-              {team2Players[index].name}
-            &lt;/Text&gt;
-          &lt;/View&gt;
-        ))}
-      &lt;/View&gt;
+      &lt;Text&gt;asas&lt;/Text&gt;
+      {/*&lt;View style={styles.teamContainer}&gt;*/}
+      {/*  &lt;Text style={styles.teamName}&gt;{team1}&lt;/Text&gt;*/}
+      {/*  &lt;Text style={styles.score}&gt;{score}&lt;/Text&gt;*/}
+      {/*  &lt;Text style={styles.teamName}&gt;{team2}&lt;/Text&gt;*/}
+      {/*&lt;/View&gt;*/}
+      {/*&lt;View style={styles.pointsContainer}&gt;*/}
+      {/*  {team1Players.map((player: Player, index: number) =&gt; (*/}
+      {/*    &lt;View key={player.name} style={styles.playerContainer}&gt;*/}
+      {/*      &lt;Text style={styles.playerName}&gt;{player.name}&lt;/Text&gt;*/}
+      {/*      &lt;Text style={styles.playerPoints}&gt;{player.points}&lt;/Text&gt;*/}
+      {/*      &lt;Text style={styles.playerPoints}&gt;*/}
+      {/*        {team2Players[index].points}*/}
+      {/*      &lt;/Text&gt;*/}
+      {/*      &lt;Text style={[styles.playerName, {textAlign: 'right'}]}&gt;*/}
+      {/*        {team2Players[index].name}*/}
+      {/*      &lt;/Text&gt;*/}
+      {/*    &lt;/View&gt;*/}
+      {/*  ))}*/}
+      {/*&lt;/View&gt;*/}
     &lt;/View&gt;
   );
 };
 &nbsp;
-const screenWidth = Dimensions.get('window').width;
-const screenHeight = Dimensions.get('window').height;
+const screenWidth = <span class="cstat-no" title="statement not covered" >Dimensions.get('window').width;</span>
+const screenHeight = <span class="cstat-no" title="statement not covered" >Dimensions.get('window').height;</span>
 &nbsp;
-const styles = StyleSheet.create({
+const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
   container: {
     flexDirection: 'column',
     justifyContent: 'center',
@@ -419,7 +407,7 @@ const styles = StyleSheet.create({
   },
 });
 &nbsp;
-export default Match;
+<span class="cstat-no" title="statement not covered" >export default Match;</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -427,7 +415,7 @@ export default Match;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-04T13:39:11.062Z
+                at 2023-05-04T22:34:42.298Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

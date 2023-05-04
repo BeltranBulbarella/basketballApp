@@ -1,53 +1,62 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import type {PlayerStat} from '../../utils/types';
-import {BottomBarCurrent} from '../../utils/types';
 import BottomBar from '../bottomBar/BottomBar';
-
-const mockData: PlayerStat[] = [
-  {
-    id: 1,
-    name: 'Player 1',
-    team: 'Team 1',
-    points: 20,
-    ppm: 20,
-    mvp: 20,
-  },
-  {
-    id: 2,
-    name: 'Player 2',
-    team: 'Team 2',
-    points: 10,
-    ppm: 10,
-    mvp: 10,
-  },
-];
+import {useGetPlayersStandings} from '../../utils/data';
+import {BottomBarCurrent, StandingStat} from '../../utils/types';
 
 const Players = ({navigation}: {navigation: any}) => {
+  const playersStandings: PlayerStat[] = useGetPlayersStandings();
+  const [sort, setSort] = useState<{key: keyof PlayerStat; asc: boolean}>({
+    key: 'points_scored',
+    asc: false,
+  });
   return (
     <>
-      <View>
+      <View style={{padding: 8}}>
         <Text style={styles.title}>Players</Text>
         <View style={styles.container}>
           <Text style={styles.subtitleNumber}>#</Text>
           <Text style={styles.subtitleTeam}>Name</Text>
           <Text style={styles.subtitleTeam}>Team</Text>
-          <Text style={styles.subtitle}>P</Text>
+          <Text
+            style={styles.subtitle}
+            onPress={() => setSort({key: 'points_scored', asc: false})}
+          >
+            P
+          </Text>
           <Text style={styles.subtitle}>PPM</Text>
-          <Text style={styles.subtitle}>MVP</Text>
+          <Text
+            style={styles.subtitle}
+            onPress={() => setSort({key: 'mvps', asc: false})}
+          >
+            MVP
+          </Text>
         </View>
-        {mockData.map((data, index) => {
-          return (
-            <View style={[styles.container, {marginTop: 10}]} key={index}>
-              <Text style={styles.mapSubtitleNumber}>{data.id}</Text>
-              <Text style={styles.mapSubtitleTeam}>{data.name}</Text>
-              <Text style={styles.mapSubtitleTeam}>{data.team}</Text>
-              <Text style={styles.mapSubtitle}>{data.points}</Text>
-              <Text style={styles.mapSubtitle}>{data.ppm}</Text>
-              <Text style={styles.mapSubtitle}>{data.mvp}</Text>
-            </View>
-          );
-        })}
+        <ScrollView>
+          {playersStandings &&
+            playersStandings
+              .sort((a, b) => {
+                if (sort.asc) return +a[sort.key] - +b[sort.key];
+                else return +b[sort.key] - +a[sort.key];
+              })
+              .map((data, index) => {
+                return (
+                  <View style={[styles.container, {marginTop: 10}]} key={index}>
+                    <Text style={styles.mapSubtitleNumber}>{index + 1}</Text>
+                    <Text style={styles.mapSubtitleTeam} numberOfLines={1}>
+                      {data.player_name}
+                    </Text>
+                    <Text style={styles.mapSubtitleTeam}>{data.team_name}</Text>
+                    <Text style={styles.mapSubtitle}>{data.points_scored}</Text>
+                    <Text style={styles.mapSubtitle}>
+                      {data.points_scored / data.matches_played}
+                    </Text>
+                    <Text style={styles.mapSubtitle}>{data.mvps}</Text>
+                  </View>
+                );
+              })}
+        </ScrollView>
       </View>
       <BottomBar navigation={navigation} current={BottomBarCurrent.Players} />
     </>
@@ -86,17 +95,17 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   mapSubtitleNumber: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'center',
     flex: 0.5,
   },
   mapSubtitleTeam: {
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'center',
     flex: 2,
   },
   mapSubtitle: {
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'center',
     flex: 1,
   },
