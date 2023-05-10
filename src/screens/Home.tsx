@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   RefreshControl,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import {useMatches} from '../utils/data';
 import SingleMatchResult from '../modules/match/singleMatchResult/SingleMatchResult';
 import type {Match} from '../utils/types';
 import {BottomBarCurrent} from '../utils/types';
 import BottomBar from '../modules/bottomBar/BottomBar';
-import {useNavigation} from '@react-navigation/native';
+import {useDataStore} from '../store/store';
 
 const Home = ({navigation}: {navigation: any}) => {
   const {refetch, loading, matchResult: matches} = useMatches();
+  const [setIndex] = useDataStore((state) => [state.setIndex]);
   return (
     <>
       <Text style={[styles.title, {marginLeft: 8}]}>Last Matches</Text>
@@ -29,7 +29,11 @@ const Home = ({navigation}: {navigation: any}) => {
             return (
               <TouchableOpacity
                 key={index}
-                onPress={() => navigation.navigate('Match')}
+                onPress={() => {
+                  // setMatchData(data);
+                  setIndex(index);
+                  navigation.navigate('Match');
+                }}
               >
                 <SingleMatchResult
                   key={data.id}

@@ -1,43 +1,73 @@
 import React from 'react';
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
-import type {ParamListBase, RouteProp} from '@react-navigation/native';
-
-interface Player {
-  name: string;
-  points: number;
-}
-
-export interface MatchResultProps {
-  team1: string;
-  team2: string;
-  score: string;
-  team1Players: Player[];
-  team2Players: Player[];
-}
+import {useDataStore} from '../../store/store';
+import {useMatches} from '../../utils/data';
+import TeamButton from './singleMatchResult/teamButton/TeamButton';
 
 const Match = () => {
+  const [index] = useDataStore((state) => [state.index]);
+  const {matchResult: matches} = useMatches();
   return (
     <View style={styles.container}>
-      <Text>asas</Text>
-      {/*<View style={styles.teamContainer}>*/}
-      {/*  <Text style={styles.teamName}>{team1}</Text>*/}
-      {/*  <Text style={styles.score}>{score}</Text>*/}
-      {/*  <Text style={styles.teamName}>{team2}</Text>*/}
-      {/*</View>*/}
-      {/*<View style={styles.pointsContainer}>*/}
-      {/*  {team1Players.map((player: Player, index: number) => (*/}
-      {/*    <View key={player.name} style={styles.playerContainer}>*/}
-      {/*      <Text style={styles.playerName}>{player.name}</Text>*/}
-      {/*      <Text style={styles.playerPoints}>{player.points}</Text>*/}
-      {/*      <Text style={styles.playerPoints}>*/}
-      {/*        {team2Players[index].points}*/}
-      {/*      </Text>*/}
-      {/*      <Text style={[styles.playerName, {textAlign: 'right'}]}>*/}
-      {/*        {team2Players[index].name}*/}
-      {/*      </Text>*/}
-      {/*    </View>*/}
-      {/*  ))}*/}
-      {/*</View>*/}
+      <View style={styles.teamContainer}>
+        <TeamButton
+          key='1'
+          players={[]}
+          id='1'
+          name={
+            matches[index] &&
+            matches[index].homeTeamPlayersMatchStats[0].player.team.name
+          }
+          imageURL={
+            matches[index] &&
+            matches[index].homeTeamPlayersMatchStats[0].player.team.imageURL
+          }
+        />
+        <Text style={styles.score}>
+          {matches[index] &&
+            `${matches[index].homeTeamPoints} - ${matches[index].awayTeamPoints}`}
+        </Text>
+        <TeamButton
+          key='2'
+          players={[]}
+          id='2'
+          name={
+            matches[index] &&
+            matches[index].awayTeamPlayersMatchStats[0].player.team.name
+          }
+          imageURL={
+            matches[index] &&
+            matches[index].awayTeamPlayersMatchStats[0].player.team.imageURL
+          }
+        />
+      </View>
+      <View style={styles.pointsContainer}>
+        {matches[index] &&
+          matches[index].homeTeamPlayersMatchStats.map(
+            (player: any, index2: number) => {
+              return (
+                <View key={player.player.name} style={styles.playerContainer}>
+                  <Text style={styles.playerName} numberOfLines={1}>
+                    {player.player.name}
+                  </Text>
+                  <Text style={styles.playerPoints}>{player.points}</Text>
+                  <Text style={styles.playerPoints}>
+                    {matches[index] &&
+                      matches[index].awayTeamPlayersMatchStats[index2].points}
+                  </Text>
+                  <Text
+                    style={[styles.playerName, {textAlign: 'right'}]}
+                    numberOfLines={1}
+                  >
+                    {matches[index] &&
+                      matches[index].awayTeamPlayersMatchStats[index2].player
+                        .name}
+                  </Text>
+                </View>
+              );
+            },
+          )}
+      </View>
     </View>
   );
 };
@@ -51,6 +81,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 10,
+    padding: 8,
   },
   teamContainer: {
     flexDirection: 'row',
@@ -65,7 +96,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   teamName: {
-    width: screenWidth * 0.4,
     height: screenHeight * 0.05,
     backgroundColor: '#333333',
     textAlign: 'center',
@@ -86,27 +116,26 @@ const styles = StyleSheet.create({
     height: screenHeight * 0.03,
     fontStyle: 'normal',
     fontWeight: '700',
-    fontSize: screenHeight * 0.015,
-    lineHeight: screenHeight * 0.02,
+    fontSize: screenHeight * 0.02, // Increased font size
+    lineHeight: screenHeight * 0.025, // Adjusted line height
     color: '#000000',
     marginRight: 5,
+    marginTop: 10,
   },
   playerPoints: {
-    width: screenWidth * 0.1,
     height: screenHeight * 0.027,
     fontStyle: 'normal',
     fontWeight: '700',
-    fontSize: screenHeight * 0.015,
-    lineHeight: screenHeight * 0.02,
+    fontSize: screenHeight * 0.02, // Increased font size
+    lineHeight: screenHeight * 0.025, // Adjusted line height
     color: '#000000',
   },
   score: {
-    width: screenWidth * 0.14,
     height: screenHeight * 0.032,
     fontStyle: 'normal',
     fontWeight: '700',
-    fontSize: screenHeight * 0.016,
-    lineHeight: screenHeight * 0.02,
+    fontSize: screenHeight * 0.022,
+    lineHeight: screenHeight * 0.025,
     textAlign: 'center',
     color: '#000000',
   },

@@ -7,7 +7,9 @@ const TeamButton = (props: Team) => {
   return (
     <View style={styles.button}>
       <SvgUri width='30' height='30' uri={props.imageURL} />
-      <Text style={styles.teamName}>{props.name}</Text>
+      <Text style={styles.teamName} numberOfLines={1}>
+        {props.name}
+      </Text>
     </View>
   );
 };

@@ -55,7 +55,7 @@ const Standings = ({navigation}: {navigation: any}) => {
                     <Text style={styles.mapSubtitle}>
                       {data.matches_played - data.wins}
                     </Text>
-                    <Text style={styles.mapSubtitle}>
+                    <Text style={styles.mapSubtitle} numberOfLines={1}>
                       {data.wins / data.matches_played}
                     </Text>
                     <Text style={styles.mapSubtitle}>{data.points_scored}</Text>

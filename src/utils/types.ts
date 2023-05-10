@@ -56,3 +56,9 @@ export enum BottomBarCurrent {
   'Standings',
   'Players',
 }
+
+export interface SingleMatch {
+  team1: Team;
+  team2: Team;
+  score: string;
+}

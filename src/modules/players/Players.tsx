@@ -3,7 +3,7 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import type {PlayerStat} from '../../utils/types';
 import BottomBar from '../bottomBar/BottomBar';
 import {useGetPlayersStandings} from '../../utils/data';
-import {BottomBarCurrent, StandingStat} from '../../utils/types';
+import {BottomBarCurrent} from '../../utils/types';
 
 const Players = ({navigation}: {navigation: any}) => {
   const playersStandings: PlayerStat[] = useGetPlayersStandings();
@@ -49,7 +49,7 @@ const Players = ({navigation}: {navigation: any}) => {
                     </Text>
                     <Text style={styles.mapSubtitleTeam}>{data.team_name}</Text>
                     <Text style={styles.mapSubtitle}>{data.points_scored}</Text>
-                    <Text style={styles.mapSubtitle}>
+                    <Text style={styles.mapSubtitle} numberOfLines={1}>
                       {data.points_scored / data.matches_played}
                     </Text>
                     <Text style={styles.mapSubtitle}>{data.mvps}</Text>

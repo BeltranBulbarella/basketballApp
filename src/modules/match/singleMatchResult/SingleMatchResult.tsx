@@ -1,15 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import type {Team} from '../../../utils/types';
 import TeamButton from './teamButton/TeamButton';
+import type {SingleMatch} from '../../../utils/types';
 
-interface CustomButtonProps {
-  team1: Team;
-  team2: Team;
-  score: string;
-}
-
-const SingleMatchResult = (props: CustomButtonProps) => {
+const SingleMatchResult = (props: SingleMatch) => {
   return (
     <View style={[styles.container, {flexDirection: 'row'}]}>
       <>
