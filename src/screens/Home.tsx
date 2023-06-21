@@ -12,6 +12,7 @@ import type {Match} from '../utils/types';
 import {BottomBarCurrent} from '../utils/types';
 import BottomBar from '../modules/bottomBar/BottomBar';
 import {useDataStore} from '../store/store';
+import {MockMatch} from '../mock/data';
 
 const Home = ({navigation}: {navigation: any}) => {
   const {refetch, loading, matchResult: matches} = useMatches();
@@ -21,14 +22,19 @@ const Home = ({navigation}: {navigation: any}) => {
       <Text style={[styles.title, {marginLeft: 8}]}>Last Matches</Text>
       <ScrollView
         refreshControl={
-          <RefreshControl onRefresh={refetch} refreshing={loading} />
+          <RefreshControl
+            onRefresh={refetch}
+            refreshing={loading}
+            testID='refresh-control'
+          />
         }
       >
-        {matches &&
-          matches.map((data: Match, index) => {
+        {MockMatch &&
+          MockMatch.map((data: any, index) => {
             return (
               <TouchableOpacity
                 key={index}
+                testID={`match-${data.id}`}
                 onPress={() => {
                   // setMatchData(data);
                   setIndex(index);

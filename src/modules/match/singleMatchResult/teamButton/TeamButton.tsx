@@ -5,7 +5,7 @@ import {SvgUri} from 'react-native-svg';
 
 const TeamButton = (props: Team) => {
   return (
-    <View style={styles.button}>
+    <View style={styles.button} testID='button'>
       <SvgUri width='30' height='30' uri={props.imageURL} />
       <Text style={styles.teamName} numberOfLines={1}>
         {props.name}

@@ -3,10 +3,11 @@ import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import {useDataStore} from '../../store/store';
 import {useMatches} from '../../utils/data';
 import TeamButton from './singleMatchResult/teamButton/TeamButton';
+import {MockMatch} from '../../mock/data';
 
 const Match = () => {
   const [index] = useDataStore((state) => [state.index]);
-  const {matchResult: matches} = useMatches();
+  // const {matchResult: matches} = useMatches();
   return (
     <View style={styles.container}>
       <View style={styles.teamContainer}>
@@ -15,35 +16,35 @@ const Match = () => {
           players={[]}
           id='1'
           name={
-            matches[index] &&
-            matches[index].homeTeamPlayersMatchStats[0].player.team.name
+            MockMatch[index] &&
+            MockMatch[index].homeTeamPlayersMatchStats[0].player.team.name
           }
           imageURL={
-            matches[index] &&
-            matches[index].homeTeamPlayersMatchStats[0].player.team.imageURL
+            MockMatch[index] &&
+            MockMatch[index].homeTeamPlayersMatchStats[0].player.team.imageURL
           }
         />
         <Text style={styles.score}>
-          {matches[index] &&
-            `${matches[index].homeTeamPoints} - ${matches[index].awayTeamPoints}`}
+          {MockMatch[index] &&
+            `${MockMatch[index].homeTeamPoints} - ${MockMatch[index].awayTeamPoints}`}
         </Text>
         <TeamButton
           key='2'
           players={[]}
           id='2'
           name={
-            matches[index] &&
-            matches[index].awayTeamPlayersMatchStats[0].player.team.name
+            MockMatch[index] &&
+            MockMatch[index].awayTeamPlayersMatchStats[0].player.team.name
           }
           imageURL={
-            matches[index] &&
-            matches[index].awayTeamPlayersMatchStats[0].player.team.imageURL
+            MockMatch[index] &&
+            MockMatch[index].awayTeamPlayersMatchStats[0].player.team.imageURL
           }
         />
       </View>
       <View style={styles.pointsContainer}>
-        {matches[index] &&
-          matches[index].homeTeamPlayersMatchStats.map(
+        {MockMatch[index] &&
+          MockMatch[index].homeTeamPlayersMatchStats.map(
             (player: any, index2: number) => {
               return (
                 <View key={player.player.name} style={styles.playerContainer}>
@@ -52,15 +53,15 @@ const Match = () => {
                   </Text>
                   <Text style={styles.playerPoints}>{player.points}</Text>
                   <Text style={styles.playerPoints}>
-                    {matches[index] &&
-                      matches[index].awayTeamPlayersMatchStats[index2].points}
+                    {MockMatch[index] &&
+                      MockMatch[index].awayTeamPlayersMatchStats[index2].points}
                   </Text>
                   <Text
                     style={[styles.playerName, {textAlign: 'right'}]}
                     numberOfLines={1}
                   >
-                    {matches[index] &&
-                      matches[index].awayTeamPlayersMatchStats[index2].player
+                    {MockMatch[index] &&
+                      MockMatch[index].awayTeamPlayersMatchStats[index2].player
                         .name}
                   </Text>
                 </View>

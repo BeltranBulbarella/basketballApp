@@ -20,6 +20,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@types/react-navigation": "^3.4.0",
     "axios": "^1.4.0",
+    "eas": "^0.1.0",
     "expo": "~48.0.15",
     "expo-status-bar": "~1.4.4",
     "prettier": "^2.8.8",

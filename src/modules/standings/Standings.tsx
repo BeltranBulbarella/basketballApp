@@ -4,9 +4,9 @@ import type {StandingStat} from '../../utils/types';
 import BottomBar from '../bottomBar/BottomBar';
 import {BottomBarCurrent} from '../../utils/types';
 import {useGetStandings} from '../../utils/data';
+import {MockStandings} from '../../mock/data';
 
 const Standings = ({navigation}: {navigation: any}) => {
-  const standings: StandingStat[] = useGetStandings();
   const [sort, setSort] = useState<{key: keyof StandingStat; asc: boolean}>({
     key: 'wins',
     asc: false,
@@ -39,10 +39,9 @@ const Standings = ({navigation}: {navigation: any}) => {
           </Text>
         </View>
         <ScrollView>
-          {standings &&
-            standings
-              .filter((t) => t.matches_played > 0)
-              .sort((a, b) => {
+          {MockStandings &&
+            MockStandings.filter((t) => t.matches_played > 0)
+              .sort((a: any, b: any) => {
                 if (sort.asc) return +a[sort.key] - +b[sort.key];
                 else return +b[sort.key] - +a[sort.key];
               })

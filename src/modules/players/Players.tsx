@@ -4,9 +4,10 @@ import type {PlayerStat} from '../../utils/types';
 import BottomBar from '../bottomBar/BottomBar';
 import {useGetPlayersStandings} from '../../utils/data';
 import {BottomBarCurrent} from '../../utils/types';
+import {MockPlayers} from '../../mock/data';
 
 const Players = ({navigation}: {navigation: any}) => {
-  const playersStandings: PlayerStat[] = useGetPlayersStandings();
+  // const playersStandings: PlayerStat[] = useGetPlayersStandings();
   const [sort, setSort] = useState<{key: keyof PlayerStat; asc: boolean}>({
     key: 'points_scored',
     asc: false,
@@ -34,28 +35,26 @@ const Players = ({navigation}: {navigation: any}) => {
           </Text>
         </View>
         <ScrollView>
-          {playersStandings &&
-            playersStandings
-              .sort((a, b) => {
-                if (sort.asc) return +a[sort.key] - +b[sort.key];
-                else return +b[sort.key] - +a[sort.key];
-              })
-              .map((data, index) => {
-                return (
-                  <View style={[styles.container, {marginTop: 10}]} key={index}>
-                    <Text style={styles.mapSubtitleNumber}>{index + 1}</Text>
-                    <Text style={styles.mapSubtitleTeam} numberOfLines={1}>
-                      {data.player_name}
-                    </Text>
-                    <Text style={styles.mapSubtitleTeam}>{data.team_name}</Text>
-                    <Text style={styles.mapSubtitle}>{data.points_scored}</Text>
-                    <Text style={styles.mapSubtitle} numberOfLines={1}>
-                      {data.points_scored / data.matches_played}
-                    </Text>
-                    <Text style={styles.mapSubtitle}>{data.mvps}</Text>
-                  </View>
-                );
-              })}
+          {MockPlayers &&
+            MockPlayers.sort((a: any, b: any) => {
+              if (sort.asc) return +a[sort.key] - +b[sort.key];
+              else return +b[sort.key] - +a[sort.key];
+            }).map((data: any, index) => {
+              return (
+                <View style={[styles.container, {marginTop: 10}]} key={index}>
+                  <Text style={styles.mapSubtitleNumber}>{index + 1}</Text>
+                  <Text style={styles.mapSubtitleTeam} numberOfLines={1}>
+                    {data.player_name}
+                  </Text>
+                  <Text style={styles.mapSubtitleTeam}>{data.team_name}</Text>
+                  <Text style={styles.mapSubtitle}>{data.points_scored}</Text>
+                  <Text style={styles.mapSubtitle} numberOfLines={1}>
+                    {data.points_scored / data.matches_played}
+                  </Text>
+                  <Text style={styles.mapSubtitle}>{data.mvps}</Text>
+                </View>
+              );
+            })}
         </ScrollView>
       </View>
       <BottomBar navigation={navigation} current={BottomBarCurrent.Players} />
